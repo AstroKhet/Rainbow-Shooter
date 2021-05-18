@@ -1,7 +1,7 @@
 
 def colour_spread(n):
     def dec_to_hex(dec):
-        """Converts base 10 to valid hexadecimal for tbg hex input, where max value = 255"""
+        # Converts base 10 to valid hexadecimal for tbg hex input, where max value = 255
         hexadecimal = str(hex(dec))[2:]
 
         if len(hexadecimal) < 2:
@@ -10,13 +10,13 @@ def colour_spread(n):
         return hexadecimal
 
     def hexafy(tpl):
-        """Converts RGB list/tuple into valid hex color code"""
+        # Converts RGB list/tuple into valid hex color code
         hex_code = "#"
         for e in tpl:
             hex_code += dec_to_hex(e)
         return hex_code
     
-    """Spreads colours evenly amongst a range of colours, starting from #ff0000 and ending with #ff0000"""
+    # Spreads colours evenly amongst a range of colours, starting from #ff0000 and ending with #ff0000
     if n <= 2:
         return ["#ff0000"] * n
 
