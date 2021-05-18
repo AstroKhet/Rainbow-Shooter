@@ -54,20 +54,14 @@ while running:
     key = pygame.key.get_pressed()
     if key[pygame.K_d] and ball.x < ww - ball.radius:
         ball.x += ball.speed
-        left = False
-        right = True
+
     if key[pygame.K_a] and ball.x > ball.radius:
         ball.x -= ball.speed
-        left = True
-        right = False
-    if key[pygame.K_a] == key[pygame.K_d]:
-        left = False
-        right = False
-        ball.walk_count = 0  # reset
 
     if not ball.jumping:
         if key[pygame.K_UP] or key[pygame.K_w]:
             ball.jumping = True
+
     elif ball.jumping:
         if ball.jumpval >= -20:
             neg = -1 if ball.jumpval < 0 else 1
